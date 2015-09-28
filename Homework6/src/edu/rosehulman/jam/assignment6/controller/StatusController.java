@@ -4,8 +4,12 @@ import edu.rosehulman.jam.assignment6.model.StatusModel;
 import edu.rosehulman.jam.assignment6.view.StatusView;
 
 public class StatusController {
-    StatusView view = new StatusView();
     StatusModel model = new StatusModel();
+    StatusView view = new StatusView();
+
+    public StatusController() {
+        model.addObserver(view);
+    }
 
     public void printToWindow(String stringToPrint) {
         model.addStatusLine(stringToPrint);
