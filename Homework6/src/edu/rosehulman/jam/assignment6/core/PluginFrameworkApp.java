@@ -22,7 +22,7 @@ public class PluginFrameworkApp {
 		
 		ExecuteController ec = new ExecuteController();
 		try {
-			IPlugin wooPlugin = PluginUpdater.jarRegistry.get("C:\\testForAssignment6\\ChandanEcho.jar").newPluginInstance();
+			IPlugin wooPlugin = PluginUpdater.jarRegistry.get("C:\\deargodpleasework\\ChandanEcho.jar").newPluginInstance();
 			ec.executePlugin(wooPlugin);
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block

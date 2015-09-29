@@ -22,7 +22,6 @@ public class FolderObserver implements Runnable {
 	}
 	
 	public void beginObserving(){
-		HashMap<String, JARObject> jr = PluginUpdater.jarRegistry;
 		try {
 			WatchService watcher = FileSystems.getDefault().newWatchService();
 			try {

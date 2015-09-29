@@ -6,6 +6,7 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Path;
 import java.util.jar.JarFile;
+import java.util.regex.Pattern;
 
 import edu.rosehulman.jam.assignment6.PluginCommons.IPlugin;
 
@@ -18,11 +19,14 @@ public class JARObject {
 	public JARObject(Path filename) throws IOException {
 		//Any plugin is required to have a class that kicks things off called JamDriver
 		this.filename = filename;
+		String shortFileName = filename.getFileName().toString();
+		String[] splitFileName = shortFileName.split("\\."); 
+		String fileNameSansExtension = splitFileName[0];
 		URL[] urlArray = {filename.toUri().toURL()};
-		System.out.println(urlArray) ;
+		System.out.println(urlArray[0]) ;
 		URLClassLoader urlClassLoader = URLClassLoader.newInstance(urlArray);
 		try {
-			this.pluginClass = urlClassLoader.loadClass("edu.rosehulman.jam.assignment6.testplugins.ChandanEcho");
+			this.pluginClass = urlClassLoader.loadClass("edu.rosehulman.jam.assignment6.testplugins." + fileNameSansExtension);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
