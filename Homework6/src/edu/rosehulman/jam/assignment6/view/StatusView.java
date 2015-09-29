@@ -13,7 +13,7 @@ import javax.swing.JScrollPane;
 public class StatusView extends JPanel implements java.util.Observer {
     private TextArea textArea;
 //    private Panel panel;
-    JFrame frame = new JFrame();
+    JFrame frame = new JFrame("Status View");
     private JScrollPane scrollPane;
     private Stack<String> statusStack;
     public StatusView() {

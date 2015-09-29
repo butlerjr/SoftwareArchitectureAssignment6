@@ -10,7 +10,7 @@ import java.awt.*;
 /**
  * Created by maken on 9/28/15.
  */
-public class ChandanEcho implements IPlugin {
+public class ShowDynamicLoading implements IPlugin {
     IExecuteView view;
     IStatusController statusController;
     
@@ -27,7 +27,7 @@ public class ChandanEcho implements IPlugin {
 
     @Override
     public void run() {
-        String echo = "Hey Chandan, nice hat!";
+        String echo = "We loaded this while the program was running!";
         System.out.println(echo);
         JPanel jp = view.getJPanel();
         JLabel label = new JLabel(echo, JLabel.CENTER);
@@ -42,6 +42,6 @@ public class ChandanEcho implements IPlugin {
 
     @Override
     public void unload() {
-    	this.statusController.printToWindow("Unloaded ChandanEcho");
+    	this.statusController.printToWindow("Unloaded ShowDynamicLoading");
     }
 }

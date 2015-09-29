@@ -4,6 +4,8 @@ import edu.rosehulman.jam.assignment6.PluginCommons.IExecuteView;
 import edu.rosehulman.jam.assignment6.PluginCommons.IPlugin;
 import edu.rosehulman.jam.assignment6.PluginCommons.IStatusController;
 
+import java.awt.FlowLayout;
+
 import javax.swing.*;
 
 /**
@@ -12,6 +14,10 @@ import javax.swing.*;
 public class CoinFlipEcho implements IPlugin {
     IExecuteView view;
     IStatusController statusController;
+    
+	public static void main(String[] args) {
+
+	}
 
 
     @Override
@@ -31,9 +37,11 @@ public class CoinFlipEcho implements IPlugin {
             coinSide = "Tails";
         }
         JPanel jp = view.getJPanel();
-        JLabel label = new JLabel(coinSide);
+        JLabel label = new JLabel(coinSide, JLabel.CENTER);
+        jp.setLayout(new FlowLayout());
         this.statusController.printToWindow(coinSide);
-        jp.add("Center", label);
+        jp.add(label);
+        jp.revalidate();
         jp.repaint();
     }
 

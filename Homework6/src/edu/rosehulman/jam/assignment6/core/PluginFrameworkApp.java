@@ -13,8 +13,8 @@ import edu.rosehulman.jam.assignment6.view.ListView;
 public class PluginFrameworkApp {
 
 	public static void main(String[] args) throws IOException {
-//		String uri = args[0];
-		File folder = new File("plugin");
+		String uri = args[0];
+		File folder = new File(uri);
 		
 		HashMap<String, JARObject> jarRegistry2 = PluginUpdater.jarRegistry;
 		ListView lc = new ListView();

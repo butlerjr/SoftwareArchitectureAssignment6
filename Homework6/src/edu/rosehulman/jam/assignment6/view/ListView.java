@@ -40,7 +40,7 @@ public class ListView extends JPanel implements ListSelectionListener{
 		HashMap<String, JARObject> jarRegistry2 = PluginUpdater.jarRegistry;
 		this.updatePluginList(jarRegistry2.keySet());
 		this.scrollPane = new JScrollPane(this.pluginList);
-		this.frame = new JFrame();
+		this.frame = new JFrame("List View");
 		this.frame.setBounds(100, 100, 450, 300);
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.frame.getContentPane().setLayout(new BoxLayout(this.frame.getContentPane(), BoxLayout.X_AXIS));
