@@ -2,6 +2,8 @@ package edu.rosehulman.jam.assignment6.core;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.nio.file.Path;
 import java.util.jar.JarFile;
 
@@ -16,6 +18,16 @@ public class JARObject {
 	public JARObject(Path filename) throws IOException {
 		//Any plugin is required to have a class that kicks things off called JamDriver
 		this.filename = filename;
+		URL[] urlArray = {filename.toUri().toURL()};
+		System.out.println(urlArray);
+		URLClassLoader urlClassLoader = URLClassLoader.newInstance(urlArray);
+		try {
+			this.pluginClass = urlClassLoader.loadClass("edu.rosehulman.jam.assignment6.testplugins.JamDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		/*
 		this.jarClassLoader = new JarClassLoader(filename.toString());
 		JarFile jf = new JarFile(new File(filename.toString()));
 		if(jf.getManifest().getEntries().containsKey("Main-Class")) {
@@ -27,6 +39,7 @@ public class JARObject {
 				e.printStackTrace();
 			}
 		}
+		*/
 
 		
 
