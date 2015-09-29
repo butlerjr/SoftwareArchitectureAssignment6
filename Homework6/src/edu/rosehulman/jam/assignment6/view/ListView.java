@@ -14,6 +14,8 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import edu.rosehulman.jam.assignment6.PluginCommons.IPlugin;
+import edu.rosehulman.jam.assignment6.controller.ExecuteController;
 import edu.rosehulman.jam.assignment6.core.JARObject;
 import edu.rosehulman.jam.assignment6.core.PluginUpdater;
 import edu.rosehulman.jam.assignment6.model.ListModel;
@@ -23,6 +25,8 @@ public class ListView extends JPanel implements ListSelectionListener{
 	JList<String> pluginList  = new JList<String>(listModel);
 	
 	private JScrollPane scrollPane;
+	private JFrame frame;
+	private ExecuteController ec = new ExecuteController();
 	/*
 	 * Model of the List Panel
 	 */
@@ -36,6 +40,12 @@ public class ListView extends JPanel implements ListSelectionListener{
 		HashMap<String, JARObject> jarRegistry2 = PluginUpdater.jarRegistry;
 		this.updatePluginList(jarRegistry2.keySet());
 		this.scrollPane = new JScrollPane(pluginList);
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
+		frame.getContentPane().add(getScrollPane());
+		frame.setVisible(true);
 		
 	}
 	
@@ -60,7 +70,15 @@ public class ListView extends JPanel implements ListSelectionListener{
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		if(!e.getValueIsAdjusting()){
-			String selectedPlugin = this.listModel.get(((JList<String>)e.getSource()).getSelectedIndex());
+			String selectedPlugin = this.listModel.get(((JList<String>)e.getSource()).getSelectedIndex())+".jar";
+			try {
+				IPlugin jo = PluginUpdater.jarRegistry.get(selectedPlugin).newPluginInstance();
+				ec.executePlugin(jo);
+			} catch (InstantiationException | IllegalAccessException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			//TODO UI collection
 			
 		}
 		
