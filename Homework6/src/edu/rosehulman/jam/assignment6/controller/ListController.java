@@ -4,4 +4,7 @@ public class ListController {
 	/*
 	 * Model of the List Panel
 	 */
+	public void loadPluginList(){
+		
+	}
 }
