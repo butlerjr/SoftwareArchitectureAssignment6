@@ -23,24 +23,22 @@ public class CoinFlipEcho implements IPlugin {
 
     @Override
     public void run() {
-        while(true) {
-            Double rand = Math.random();
-            String coinSide;
-            if (rand > 0.5) {
-                coinSide = "Heads";
-            } else {
-                coinSide = "Tails";
-            }
-            JPanel jp = view.getJPanel();
-            JLabel label = new JLabel(coinSide);
-            this.statusController.printToWindow(coinSide);
-            jp.add("Center", label);
-            jp.repaint();
+        Double rand = Math.random();
+        String coinSide;
+        if (rand > 0.5) {
+            coinSide = "Heads";
+        } else {
+            coinSide = "Tails";
         }
+        JPanel jp = view.getJPanel();
+        JLabel label = new JLabel(coinSide);
+        this.statusController.printToWindow(coinSide);
+        jp.add("Center", label);
+        jp.repaint();
     }
 
     @Override
     public void unload() {
-
+        this.statusController.printToWindow("Unloaded CoinFlipEcho");
     }
 }
