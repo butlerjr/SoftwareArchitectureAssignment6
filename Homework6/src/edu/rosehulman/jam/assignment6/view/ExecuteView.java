@@ -6,11 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ExecuteView extends JPanel implements IExecuteView {
-    JPanel panel = new JPanel();
     Frame frame = new Frame("Execute Window");
 
     public ExecuteView() {
-        frame.add(getJPanel());
+        frame.add(this);
 
         frame.setSize(500,500);
         frame.setLocation(100,100);
@@ -18,11 +17,7 @@ public class ExecuteView extends JPanel implements IExecuteView {
     }
 
     public JPanel getJPanel() {
-        return this.panel;
+        return this;
     }
-    public void setJPanel(JPanel pan) {
-    	panel = pan;
-    	this.revalidate();
-    	this.repaint();
-    }
+    
 }

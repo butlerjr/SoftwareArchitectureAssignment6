@@ -36,8 +36,7 @@ public class ChandanEcho implements IPlugin {
         this.statusController.printToWindow(echo);
         jp.revalidate();
         jp.repaint();
-        
-        view.setJPanel(jp);
+
     }
 
     @Override

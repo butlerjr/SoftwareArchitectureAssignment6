@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d6fa1f1c-9e58-4b62-a248-5dd25b3fbf85" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TestPlugins/src/edu/rosehulman/jam/assignment6/testplugins/ChandanEcho.java" afterPath="$PROJECT_DIR$/../TestPlugins/src/edu/rosehulman/jam/assignment6/testplugins/ChandanEcho.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/view/ExecuteView.java" afterPath="$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/view/ExecuteView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PluginCommons/src/edu/rosehulman/jam/assignment6/PluginCommons/IExecuteView.java" afterPath="$PROJECT_DIR$/../PluginCommons/src/edu/rosehulman/jam/assignment6/PluginCommons/IExecuteView.java" />
     </list>
     <ignored path="Homework6.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,12 +27,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ChandanEcho.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChandanEcho.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../TestPlugins/src/edu/rosehulman/jam/assignment6/testplugins/ChandanEcho.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67634255">
-              <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IExecuteView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../PluginCommons/src/edu/rosehulman/jam/assignment6/PluginCommons/IExecuteView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExecuteController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/controller/ExecuteController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExecuteView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/view/ExecuteView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.41364297">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,11 +103,11 @@
         <option value="$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/model/StatusModel.java" />
         <option value="$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/view/StatusView.java" />
         <option value="$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/controller/StatusController.java" />
-        <option value="$PROJECT_DIR$/../PluginCommons/src/edu/rosehulman/jam/assignment6/PluginCommons/IExecuteView.java" />
         <option value="$PROJECT_DIR$/../PluginCommons/src/edu/rosehulman/jam/assignment6/PluginCommons/IStatusController.java" />
-        <option value="$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/view/ExecuteView.java" />
         <option value="$PROJECT_DIR$/../TestPlugins/src/edu/rosehulman/jam/assignment6/testplugins/CoinFlipEcho.java" />
+        <option value="$PROJECT_DIR$/../PluginCommons/src/edu/rosehulman/jam/assignment6/PluginCommons/IExecuteView.java" />
         <option value="$PROJECT_DIR$/../TestPlugins/src/edu/rosehulman/jam/assignment6/testplugins/ChandanEcho.java" />
+        <option value="$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/view/ExecuteView.java" />
       </list>
     </option>
   </component>
@@ -314,7 +349,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="st&#9;FILE&#9;file:///Users/maken/Git/SoftwareArchitectureAssignment6/Homework6/src/edu/rosehulman/jam/assignment6/controller/StatusController.java&#10;statuscontro&#9;FILE&#9;file:///Users/maken/Git/SoftwareArchitectureAssignment6/Homework6/src/edu/rosehulman/jam/assignment6/controller/StatusController.java" />
+    <property name="SearchEverywhereHistoryKey" value="exeview&#9;FILE&#9;file:///Users/maken/Git/SoftwareArchitectureAssignment6/Homework6/src/edu/rosehulman/jam/assignment6/view/ExecuteView.java&#10;st&#9;FILE&#9;file:///Users/maken/Git/SoftwareArchitectureAssignment6/Homework6/src/edu/rosehulman/jam/assignment6/controller/StatusController.java&#10;statuscontro&#9;FILE&#9;file:///Users/maken/Git/SoftwareArchitectureAssignment6/Homework6/src/edu/rosehulman/jam/assignment6/controller/StatusController.java" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -608,12 +643,12 @@
       <workItem from="1443539593145" duration="201000" />
       <workItem from="1443541084909" duration="583000" />
       <workItem from="1443541834279" duration="44000" />
-      <workItem from="1443541950946" duration="196000" />
+      <workItem from="1443541950946" duration="1698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15397000" />
+    <option name="totallyTimeSpent" value="16899000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="807" extended-state="0" />
@@ -1055,10 +1090,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../TestPlugins/src/edu/rosehulman/jam/assignment6/testplugins/CoinFlipEcho.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../PluginCommons/src/edu/rosehulman/jam/assignment6/PluginCommons/IExecuteView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10948905">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,28 +1115,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/view/ExecuteView.java">
+    <entry file="file://$PROJECT_DIR$/../TestPlugins/src/edu/rosehulman/jam/assignment6/testplugins/ChandanEcho.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/rosehulman/jam/assignment6/view/ExecuteView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41364297">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TestPlugins/src/edu/rosehulman/jam/assignment6/testplugins/CoinFlipEcho.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TestPlugins/src/edu/rosehulman/jam/assignment6/testplugins/ChandanEcho.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67634255">
-          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
