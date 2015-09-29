@@ -21,8 +21,8 @@ import edu.rosehulman.jam.assignment6.core.PluginUpdater;
 import edu.rosehulman.jam.assignment6.model.ListModel;
 
 public class ListView extends JPanel implements ListSelectionListener{
-	DefaultListModel<String> listModel = new DefaultListModel<String>();
-	JList<String> pluginList  = new JList<String>(listModel);
+	private DefaultListModel<String> listModel = new DefaultListModel<String>();
+	private JList<String> pluginList  = new JList<String>(listModel);
 	
 	private JScrollPane scrollPane;
 	private JFrame frame;
@@ -33,35 +33,36 @@ public class ListView extends JPanel implements ListSelectionListener{
 	public ListView(){
 		super();
 
-		pluginList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		pluginList.setLayoutOrientation(JList.VERTICAL);
-		pluginList.setVisibleRowCount(-1);
-		pluginList.addListSelectionListener(this);
+		this.pluginList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		this.pluginList.setLayoutOrientation(JList.VERTICAL);
+		this.pluginList.setVisibleRowCount(-1);
+		this.pluginList.addListSelectionListener(this);
 		HashMap<String, JARObject> jarRegistry2 = PluginUpdater.jarRegistry;
 		this.updatePluginList(jarRegistry2.keySet());
-		this.scrollPane = new JScrollPane(pluginList);
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
-		frame.getContentPane().add(getScrollPane());
-		frame.setVisible(true);
+		this.scrollPane = new JScrollPane(this.pluginList);
+		this.frame = new JFrame();
+		this.frame.setBounds(100, 100, 450, 300);
+		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.frame.getContentPane().setLayout(new BoxLayout(this.frame.getContentPane(), BoxLayout.X_AXIS));
+		this.frame.getContentPane().add(getScrollPane());
+		this.frame.setVisible(true);
 		
 	}
 	
 
 	public JScrollPane getScrollPane() {
-		return scrollPane;
+		return this.scrollPane;
 	}
 
 	public void updatePluginList(Set<String> fList){
-		listModel = new DefaultListModel<String>();
+		this.listModel = new DefaultListModel<String>();
 		for(String plugin: fList){
-			listModel.addElement(plugin.replaceAll(".jar", ""));
+			this.listModel.addElement(plugin.replaceAll(".jar", ""));
 			System.out.println(plugin);
 				
 		}
-		pluginList.setModel(listModel);
+		this.pluginList.setModel(this.listModel);
+		this.revalidate();
 		this.paint(this.getGraphics());
 	}
 	
@@ -79,7 +80,7 @@ public class ListView extends JPanel implements ListSelectionListener{
 //				plugin.run();
 			} catch (InstantiationException | IllegalAccessException e1) {
 				// TODO Auto-generated catch block
-				e1.printStackTrace();
+//				e1.printStackTrace();
 			}
 
 			

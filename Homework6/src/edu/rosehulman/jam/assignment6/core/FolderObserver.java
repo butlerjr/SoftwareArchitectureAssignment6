@@ -56,14 +56,15 @@ public class FolderObserver implements Runnable {
 				        // context of the event.
 				        WatchEvent<Path> ev = (WatchEvent<Path>)event;
 				        Path filename = ev.context();
+				        File f = new File(this.path+"//"+filename);
 
 				        // Verify that the new
 				        //  file is a text file.
-				       if(filename.toFile().getName().endsWith(".jar")){
+				       if(f.getName().endsWith(".jar")){
 
 				        // Email the file to the
 				        //  specified email alias.
-				        JARObject jarObject = new JARObject(filename);
+				        JARObject jarObject = new JARObject(f.toPath());
 				        if (kind == StandardWatchEventKinds.ENTRY_CREATE){
 				        	System.out.format("You've added the file %s%n", filename);
 				        	
@@ -86,13 +87,13 @@ public class FolderObserver implements Runnable {
 				    }
 				}
 			} catch (IOException x) {
-			    System.err.println(x);
+//			    System.err.println(x);
 			}
 			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		
 		

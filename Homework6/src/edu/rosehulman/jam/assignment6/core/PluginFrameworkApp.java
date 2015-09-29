@@ -17,11 +17,13 @@ public class PluginFrameworkApp {
 		File folder = new File("plugin");
 		
 		HashMap<String, JARObject> jarRegistry2 = PluginUpdater.jarRegistry;
-		
+		ListView lc = new ListView();
+		PluginUpdater.setListView(lc);
 		FolderObserver folderObserver = new FolderObserver(folder);
 		Thread folderObserverThread = new Thread(folderObserver);
 		folderObserverThread.start();
-		ListView lc = new ListView();
+		
+		
 
 		//List lc = new List();
 //		ExecuteController ec = new ExecuteController();
