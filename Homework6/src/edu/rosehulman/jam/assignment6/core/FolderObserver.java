@@ -9,18 +9,20 @@ import java.nio.file.StandardWatchEventKinds;
 import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
+import java.util.HashMap;
 
 public class FolderObserver implements Runnable {
 	
 	Path path;
 
-	public FolderObserver(File folder) {
+	public FolderObserver(File folder) throws IOException {
 		this.path = folder.toPath();
+		importCurrentFiles();
 		//Remember to load everything on launch
 	}
 	
 	public void beginObserving(){
-		importCurrentFiles();
+		HashMap<String, JARObject> jr = PluginUpdater.jarRegistry;
 		try {
 			WatchService watcher = FileSystems.getDefault().newWatchService();
 			try {
@@ -98,7 +100,7 @@ public class FolderObserver implements Runnable {
 	 * it should send a message to the core to install and register the plugin.
 	 */
 
-	private void importCurrentFiles() {
+	private void importCurrentFiles() throws IOException {
 		String pathString = this.path.toString();
 		File file = new File(pathString);
 		File[] childFiles = file.listFiles();

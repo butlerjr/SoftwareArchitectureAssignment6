@@ -1,6 +1,9 @@
 package edu.rosehulman.jam.assignment6.core;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
+import java.util.jar.JarFile;
 
 import edu.rosehulman.jam.assignment6.PluginCommons.IPlugin;
 
@@ -10,16 +13,21 @@ public class JARObject {
 	private JarClassLoader jarClassLoader;
 	private Class pluginClass;
 
-	public JARObject(Path filename) {
+	public JARObject(Path filename) throws IOException {
 		//Any plugin is required to have a class that kicks things off called JamDriver
 		this.filename = filename;
 		this.jarClassLoader = new JarClassLoader(filename.toString());
-		try {
-			this.pluginClass = this.jarClassLoader.loadClass("JamDriver", true);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		JarFile jf = new JarFile(new File(filename.toString()));
+		if(jf.getManifest().getEntries().containsKey("Main-Class")) {
+		    String mainClassName = jf.getManifest().getEntries().get("Main-Class").toString();
+			try {
+				this.pluginClass = this.jarClassLoader.loadClass(mainClassName, true);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+
 		
 
 		/*

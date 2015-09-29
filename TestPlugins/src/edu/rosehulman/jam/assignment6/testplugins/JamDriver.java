@@ -7,7 +7,6 @@ import edu.rosehulman.jam.assignment6.PluginCommons.IStatusController;
 public class JamDriver implements IPlugin{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -19,7 +18,7 @@ public class JamDriver implements IPlugin{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		System.out.println("YOU LOADED ME! WOOOOO");
 		
 	}
 

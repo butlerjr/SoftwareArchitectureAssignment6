@@ -8,8 +8,12 @@ public class ExecuteController {
     StatusController statusController = new StatusController();
 
     public void executePlugin(IPlugin plugin) {
+    	
+    	plugin.run();
+    	/*
         plugin.load(view, statusController);
         plugin.run();
         plugin.unload();
+        */
     }
 }
