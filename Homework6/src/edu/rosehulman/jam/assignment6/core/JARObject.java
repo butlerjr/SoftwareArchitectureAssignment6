@@ -2,7 +2,7 @@ package edu.rosehulman.jam.assignment6.core;
 
 import java.nio.file.Path;
 
-import edu.rosehulman.jam.assignment6.IPlugin;
+import edu.rosehulman.jam.assignment6.PluginCommons.IPlugin;
 
 public class JARObject {
 	

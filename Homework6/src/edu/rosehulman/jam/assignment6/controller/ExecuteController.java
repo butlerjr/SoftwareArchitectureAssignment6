@@ -1,6 +1,6 @@
 package edu.rosehulman.jam.assignment6.controller;
 
-import edu.rosehulman.jam.assignment6.IPlugin;
+import edu.rosehulman.jam.assignment6.PluginCommons.IPlugin;
 import edu.rosehulman.jam.assignment6.view.ExecuteView;
 
 public class ExecuteController {
