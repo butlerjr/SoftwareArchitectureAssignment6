@@ -22,7 +22,7 @@ public class JARObject {
 		System.out.println(urlArray) ;
 		URLClassLoader urlClassLoader = URLClassLoader.newInstance(urlArray);
 		try {
-			this.pluginClass = urlClassLoader.loadClass("edu.rosehulman.jam.assignment6.testplugins.JamDriver");
+			this.pluginClass = urlClassLoader.loadClass("edu.rosehulman.jam.assignment6.testplugins.ChandanEcho");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
