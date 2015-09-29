@@ -14,6 +14,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import edu.rosehulman.jam.assignment6.PluginCommons.IPlugin;
 import edu.rosehulman.jam.assignment6.core.JARObject;
 import edu.rosehulman.jam.assignment6.core.PluginUpdater;
 import edu.rosehulman.jam.assignment6.model.ListModel;
@@ -60,8 +61,16 @@ public class ListView extends JPanel implements ListSelectionListener{
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		if(!e.getValueIsAdjusting()){
-			String selectedPlugin = this.listModel.get(((JList<String>)e.getSource()).getSelectedIndex());
-			
+			String selectedPlugin = this.listModel.get(((JList<String>)e.getSource()).getSelectedIndex())+".jar";
+			JARObject jo = PluginUpdater.jarRegistry.get(selectedPlugin);
+			try {
+				IPlugin plugin = jo.newPluginInstance();
+				plugin.load(PluginUpdater.getExecuteView(), PluginUpdater.getStatusController());
+				plugin.run();
+			} catch (InstantiationException | IllegalAccessException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		
 	}

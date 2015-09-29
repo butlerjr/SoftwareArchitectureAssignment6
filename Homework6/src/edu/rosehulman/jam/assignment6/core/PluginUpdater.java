@@ -3,6 +3,8 @@ package edu.rosehulman.jam.assignment6.core;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import edu.rosehulman.jam.assignment6.controller.StatusController;
+import edu.rosehulman.jam.assignment6.view.ExecuteView;
 import edu.rosehulman.jam.assignment6.view.List;
 import edu.rosehulman.jam.assignment6.view.ListView;
 
@@ -10,9 +12,11 @@ public class PluginUpdater {
 	/*
 	 * This class installs the plugins and... does some other stuff, probably
 	 */
-	static ListView godListView;
+	static ExecuteView executeView;
 	
 	public static HashMap<String, JARObject> jarRegistry = new HashMap<String, JARObject>();
+
+	private static StatusController statusController;
 	
 	static void installPlugin(JARObject jarObject){
 		if (!jarRegistry.containsKey(jarObject.getFilename().toString())){
@@ -33,11 +37,19 @@ public class PluginUpdater {
 		System.out.println("Registry is now: ");
 	}
 	
-	static void setList(ListView listView){
-		godListView = listView;
+	public static void setExecuteView(ExecuteView ev){
+		executeView = ev;
 	}
 	
-	static ListView getListView(){
-		return godListView;
+	public static ExecuteView getExecuteView(){
+		return executeView;
+	}
+
+	public static void setStatusController(StatusController sc) {
+		statusController = sc;	
+	}
+	
+	public static StatusController getStatusController(){
+		return statusController;
 	}
 }

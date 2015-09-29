@@ -22,9 +22,14 @@ public class PluginFrameworkApp {
 		folderObserverThread.start();
 		List lc = new List();
 		ExecuteController ec = new ExecuteController();
+		PluginUpdater.setExecuteView(ec.getView());
+		StatusController sc = new StatusController();
+		PluginUpdater.setStatusController(sc);
+		/*
 		try {
 			IPlugin wooPlugin = PluginUpdater.jarRegistry.get("C:\\deargodpleasework\\ChandanEcho.jar").newPluginInstance();
 			ec.executePlugin(wooPlugin);
+	
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,6 +38,8 @@ public class PluginFrameworkApp {
 			e.printStackTrace();
 		}
 		//ListController lc = new ListController();
+		 * 
+		 */
 		
 		
 	}
