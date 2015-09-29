@@ -6,7 +6,6 @@ import java.util.HashMap;
 
 import edu.rosehulman.jam.assignment6.PluginCommons.IPlugin;
 import edu.rosehulman.jam.assignment6.controller.ExecuteController;
-import edu.rosehulman.jam.assignment6.controller.ListController;
 import edu.rosehulman.jam.assignment6.controller.StatusController;
 
 public class PluginFrameworkApp {
@@ -32,7 +31,7 @@ public class PluginFrameworkApp {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		ListController lc = new ListController();
+		//ListController lc = new ListController();
 		
 		
 	}

@@ -19,7 +19,7 @@ public class JARObject {
 		//Any plugin is required to have a class that kicks things off called JamDriver
 		this.filename = filename;
 		URL[] urlArray = {filename.toUri().toURL()};
-		System.out.println(urlArray);
+		System.out.println(urlArray) ;
 		URLClassLoader urlClassLoader = URLClassLoader.newInstance(urlArray);
 		try {
 			this.pluginClass = urlClassLoader.loadClass("edu.rosehulman.jam.assignment6.testplugins.JamDriver");
