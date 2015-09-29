@@ -1,6 +1,8 @@
 package edu.rosehulman.jam.assignment6.view;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Set;
 
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
@@ -12,6 +14,8 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import edu.rosehulman.jam.assignment6.core.JARObject;
+import edu.rosehulman.jam.assignment6.core.PluginUpdater;
 import edu.rosehulman.jam.assignment6.model.ListModel;
 
 public class ListView extends JPanel implements ListSelectionListener{
@@ -29,22 +33,22 @@ public class ListView extends JPanel implements ListSelectionListener{
 		pluginList.setLayoutOrientation(JList.VERTICAL);
 		pluginList.setVisibleRowCount(-1);
 		pluginList.addListSelectionListener(this);
-		ListModel lm = new ListModel();
-		this.updatePluginList(lm.getPlugins());
+		HashMap<String, JARObject> jarRegistry2 = PluginUpdater.jarRegistry;
+		this.updatePluginList(jarRegistry2.keySet());
 		this.scrollPane = new JScrollPane(pluginList);
 		
 	}
 	
+
 	public JScrollPane getScrollPane() {
 		return scrollPane;
 	}
 
-	public void updatePluginList(File[] newPluginList){
+	public void updatePluginList(Set<String> fList){
 		listModel = new DefaultListModel<String>();
-		File[] fList = newPluginList;
-		for(File plugin: fList){
-			listModel.addElement(plugin.getName().replaceAll(".jar", ""));
-			System.out.println(plugin.getName());
+		for(String plugin: fList){
+			listModel.addElement(plugin.replaceAll(".jar", ""));
+			System.out.println(plugin);
 				
 		}
 		pluginList.setModel(listModel);

@@ -55,6 +55,7 @@ public class List {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
 		frame.getContentPane().add(new ListView().getScrollPane());
+		frame.setVisible(true);
 	}
 
 }
