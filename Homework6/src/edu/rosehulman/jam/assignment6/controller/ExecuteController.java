@@ -9,11 +9,13 @@ public class ExecuteController {
 
     public void executePlugin(IPlugin plugin) {
     	
-    	plugin.run();
-    	/*
+    	//plugin.run();
         plugin.load(view, statusController);
         plugin.run();
         plugin.unload();
-        */
+    }
+    
+    public ExecuteView getView(){
+    	return view;
     }
 }

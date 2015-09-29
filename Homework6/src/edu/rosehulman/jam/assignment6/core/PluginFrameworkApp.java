@@ -22,18 +22,28 @@ public class PluginFrameworkApp {
 		Thread folderObserverThread = new Thread(folderObserver);
 		folderObserverThread.start();
 		ListView lc = new ListView();
-//		ExecuteController ec = new ExecuteController();
-//		try {
-//			IPlugin wooPlugin = PluginUpdater.jarRegistry.get("C:\\testForAssignment6\\woo.jar").newPluginInstance();
-//			ec.executePlugin(wooPlugin);
-//		} catch (InstantiationException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IllegalAccessException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+
+		//List lc = new List();
+		ExecuteController ec = new ExecuteController();
+		PluginUpdater.setExecuteView(ec.getView());
+		StatusController sc = new StatusController();
+		PluginUpdater.setStatusController(sc);
+		/*
+		try {
+			IPlugin wooPlugin = PluginUpdater.jarRegistry.get("C:\\deargodpleasework\\ChandanEcho.jar").newPluginInstance();
+			ec.executePlugin(wooPlugin);
+	
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		//ListController lc = new ListController();
+		 * 
+		 */
 		
 		
 	}
