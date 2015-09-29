@@ -20,4 +20,8 @@ public class ExecuteView implements IExecuteView {
     public JPanel getJPanel() {
         return this.panel;
     }
+    public void setJPanel(JPanel pan) {
+    	panel = pan;
+    	frame.repaint();
+    }
 }

@@ -24,10 +24,10 @@ public class PluginFrameworkApp {
 		ListView lc = new ListView();
 
 		//List lc = new List();
-		ExecuteController ec = new ExecuteController();
-		PluginUpdater.setExecuteView(ec.getView());
-		StatusController sc = new StatusController();
-		PluginUpdater.setStatusController(sc);
+//		ExecuteController ec = new ExecuteController();
+//		PluginUpdater.setExecuteView(ec.getView());
+//		StatusController sc = new StatusController();
+//		PluginUpdater.setStatusController(sc);
 		/*
 		try {
 			IPlugin wooPlugin = PluginUpdater.jarRegistry.get("C:\\deargodpleasework\\ChandanEcho.jar").newPluginInstance();

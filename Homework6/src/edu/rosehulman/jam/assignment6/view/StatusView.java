@@ -4,9 +4,12 @@ import java.awt.*;
 import java.util.List;
 import java.util.Observable;
 
+import javax.swing.JFrame;
+
 public class StatusView implements java.util.Observer {
     private TextArea textArea;
     private Panel panel;
+    JFrame frame = new JFrame();
 
     public StatusView() {
         this.textArea = new TextArea();
@@ -14,6 +17,10 @@ public class StatusView implements java.util.Observer {
 
         panel = new Panel();
         panel.add("TextArea", textArea);
+        frame.add(panel);
+        frame.setSize(500,200);
+        frame.setLocation(100,100);
+        frame.setVisible(true);
     }
 
     public Panel getPanel() {

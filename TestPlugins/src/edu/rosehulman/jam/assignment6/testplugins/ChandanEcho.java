@@ -12,6 +12,10 @@ import javax.swing.*;
 public class ChandanEcho implements IPlugin {
     IExecuteView view;
     IStatusController statusController;
+    
+	public static void main(String[] args) {
+
+	}
 
     @Override
     public void load(IExecuteView view, IStatusController statusController) {
@@ -23,11 +27,13 @@ public class ChandanEcho implements IPlugin {
     @Override
     public void run() {
         String echo = "Hey Chandan, nice hat!";
+        System.out.println(echo);
         JPanel jp = view.getJPanel();
         JLabel label = new JLabel(echo);
         this.statusController.printToWindow(echo);
         jp.add("Center", label);
-        jp.repaint();
+        jp.paint(jp.getGraphics());
+        view.setJPanel(jp);
     }
 
     @Override

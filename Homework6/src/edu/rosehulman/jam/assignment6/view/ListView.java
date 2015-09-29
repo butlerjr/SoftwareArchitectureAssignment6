@@ -26,7 +26,7 @@ public class ListView extends JPanel implements ListSelectionListener{
 	
 	private JScrollPane scrollPane;
 	private JFrame frame;
-	private ExecuteController ec = new ExecuteController();
+	 ExecuteController ec = new ExecuteController();
 	/*
 	 * Model of the List Panel
 	 */
@@ -71,14 +71,17 @@ public class ListView extends JPanel implements ListSelectionListener{
 	public void valueChanged(ListSelectionEvent e) {
 		if(!e.getValueIsAdjusting()){
 			String selectedPlugin = this.listModel.get(((JList<String>)e.getSource()).getSelectedIndex())+".jar";
+			JARObject jo = PluginUpdater.jarRegistry.get(selectedPlugin);
 			try {
-				IPlugin jo = PluginUpdater.jarRegistry.get(selectedPlugin).newPluginInstance();
-				ec.executePlugin(jo);
+				IPlugin plugin = jo.newPluginInstance();
+				ec.executePlugin(plugin);
+//				plugin.load(PluginUpdater.getExecuteView(), PluginUpdater.getStatusController());
+//				plugin.run();
 			} catch (InstantiationException | IllegalAccessException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			//TODO UI collection
+
 			
 		}
 		

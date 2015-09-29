@@ -4,4 +4,5 @@ import javax.swing.*;
 
 public interface IExecuteView {
     JPanel getJPanel();
+    void setJPanel(JPanel pan);
 }
