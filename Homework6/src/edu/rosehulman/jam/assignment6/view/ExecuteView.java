@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class ExecuteView implements IExecuteView {
     JPanel panel = new JPanel();
-    Frame frame = new Frame();
+    Frame frame = new Frame("Execute Window");
 
     public ExecuteView() {
         frame.add(panel);
