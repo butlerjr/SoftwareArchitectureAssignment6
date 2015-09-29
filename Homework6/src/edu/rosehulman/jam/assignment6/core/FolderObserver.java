@@ -1,6 +1,7 @@
 package edu.rosehulman.jam.assignment6.core;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -59,6 +60,7 @@ public class FolderObserver implements Runnable {
 
 				        // Verify that the new
 				        //  file is a text file.
+				       if(filename.toFile().getName().endsWith(".jar")){
 
 				        // Email the file to the
 				        //  specified email alias.
@@ -72,6 +74,7 @@ public class FolderObserver implements Runnable {
 				        	System.out.format("You've deleted the file %s%n", filename);
 				        	PluginUpdater.removePlugin(jarObject);
 				        }
+				       }
 				        //Details left to reader....
 				    }
 
@@ -103,7 +106,12 @@ public class FolderObserver implements Runnable {
 	private void importCurrentFiles() throws IOException {
 		String pathString = this.path.toString();
 		File file = new File(pathString);
-		File[] childFiles = file.listFiles();
+		File[] childFiles = file.listFiles(new FilenameFilter() {
+		    @Override
+		    public boolean accept(File dir, String name) {
+		        return name.endsWith(".jar");
+		    }
+		});
 		for (File f : childFiles){
 			JARObject jo = new JARObject(f.toPath());
 			PluginUpdater.installPlugin(jo);
