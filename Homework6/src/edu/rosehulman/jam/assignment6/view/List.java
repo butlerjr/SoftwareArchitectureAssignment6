@@ -54,28 +54,7 @@ public class List {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
-		
-		DefaultListModel<String> listModel = new DefaultListModel<String>();
-		
-
-		File pluginDirectory = new File("plugins");
-		File[] fList = pluginDirectory.listFiles(new FilenameFilter() {
-		    @Override
-		    public boolean accept(File dir, String name) {
-		        return name.endsWith(".jar");
-		    }
-		});
-		System.out.println(fList[0].getName());
-		for(File plugin: fList){
-			listModel.addElement(plugin.getName().replaceAll(".jar", ""));
-				
-		}
-		JList pluginList = new JList(listModel);
-		pluginList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		pluginList.setLayoutOrientation(JList.VERTICAL);
-		pluginList.setVisibleRowCount(-1);
-		JScrollPane scrollPane = new JScrollPane(pluginList);
-		frame.getContentPane().add(scrollPane);
+		frame.getContentPane().add(new ListView().getScrollPane());
 	}
 
 }

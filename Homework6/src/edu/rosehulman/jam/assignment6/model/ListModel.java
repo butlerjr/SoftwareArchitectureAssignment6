@@ -10,24 +10,24 @@ public class ListModel {
 	 * Model of the List Panel
 	 */
 	
-	private List<String> pluginList;
+	private File[] pluginList;
 	public ListModel() {
 		
 	}
 	
-	public List<String> getPlugins(){
-		pluginList = new ArrayList<String>();
-		File pluginDirectory = new File("plugins");
-		File[] fList = pluginDirectory.listFiles(new FilenameFilter() {
+	public File[] getPlugins(){
+		
+		File pluginDirectory = new File("plugin");
+		this.pluginList = pluginDirectory.listFiles(new FilenameFilter() {
 		    @Override
 		    public boolean accept(File dir, String name) {
 		        return name.endsWith(".jar");
 		    }
 		});
-		System.out.println(fList[0].getName());
-		for(File plugin: fList){
-			pluginList.add(plugin.getName());
-		}
+//		System.out.println(fList[0].getName());
+//		for(File plugin: fList){
+//			pluginList.add(plugin.getName());
+//		}
 		return pluginList;
 	}
 }
