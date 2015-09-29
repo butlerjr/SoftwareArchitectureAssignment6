@@ -5,12 +5,12 @@ import edu.rosehulman.jam.assignment6.PluginCommons.IExecuteView;
 import javax.swing.*;
 import java.awt.*;
 
-public class ExecuteView implements IExecuteView {
+public class ExecuteView extends JPanel implements IExecuteView {
     JPanel panel = new JPanel();
     Frame frame = new Frame("Execute Window");
 
     public ExecuteView() {
-        frame.add(panel);
+        frame.add(getJPanel());
 
         frame.setSize(500,500);
         frame.setLocation(100,100);
@@ -22,6 +22,7 @@ public class ExecuteView implements IExecuteView {
     }
     public void setJPanel(JPanel pan) {
     	panel = pan;
-    	frame.repaint();
+    	this.revalidate();
+    	this.repaint();
     }
 }

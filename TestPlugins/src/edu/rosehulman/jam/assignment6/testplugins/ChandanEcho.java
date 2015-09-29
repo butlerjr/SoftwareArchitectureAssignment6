@@ -32,7 +32,9 @@ public class ChandanEcho implements IPlugin {
         JLabel label = new JLabel(echo);
         this.statusController.printToWindow(echo);
         jp.add("Center", label);
-        jp.paint(jp.getGraphics());
+        jp.revalidate();
+        jp.repaint();
+        
         view.setJPanel(jp);
     }
 

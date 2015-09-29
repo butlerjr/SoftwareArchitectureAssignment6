@@ -14,6 +14,7 @@ public class StatusController implements IStatusController {
 
     public void printToWindow(String stringToPrint) {
         model.addStatusLine(stringToPrint);
+        view.update(stringToPrint);
     }
 
     public void newPluginLoaded() {
