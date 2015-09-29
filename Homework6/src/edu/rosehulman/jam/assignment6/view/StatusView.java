@@ -36,12 +36,7 @@ public class StatusView extends JPanel implements java.util.Observer {
 //        return panel;
 //    }
     public void update(String status){
-    	statusStack.push(status);
-    	StringBuilder sb = new StringBuilder();
-        for (String s : statusStack) {
-            sb.append(s + "\n");
-        }
-        this.textArea.setText(sb.toString());
+        this.textArea.append(status +"\n");
         this.revalidate();
         this.paint(this.getGraphics());
     }
