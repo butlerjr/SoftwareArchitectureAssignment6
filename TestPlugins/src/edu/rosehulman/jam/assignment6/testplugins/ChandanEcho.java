@@ -5,6 +5,7 @@ import edu.rosehulman.jam.assignment6.PluginCommons.IPlugin;
 import edu.rosehulman.jam.assignment6.PluginCommons.IStatusController;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by maken on 9/28/15.
@@ -29,9 +30,10 @@ public class ChandanEcho implements IPlugin {
         String echo = "Hey Chandan, nice hat!";
         System.out.println(echo);
         JPanel jp = view.getJPanel();
-        JLabel label = new JLabel(echo);
+        JLabel label = new JLabel(echo, JLabel.CENTER);
+        jp.setLayout(new FlowLayout());
+        jp.add(label);
         this.statusController.printToWindow(echo);
-        jp.add("Center", label);
         jp.revalidate();
         jp.repaint();
         
